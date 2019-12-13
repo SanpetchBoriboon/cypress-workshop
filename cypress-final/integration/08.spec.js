@@ -4,7 +4,7 @@ describe("/register", function() {
   });
 
   beforeEach(function() {
-    cy.visit("/register")
+    cy.visit("/register");
   });
 
   it("should greet with `Sign Up`", function() {
