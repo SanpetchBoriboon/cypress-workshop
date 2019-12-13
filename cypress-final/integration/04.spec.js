@@ -9,9 +9,9 @@ describe("/signin", function() {
     cy.get("a").contains("Need an account?").should("have.attr", "href", "/register");
   });
 
-  it("should sign me up successfully", function() {
+  it("should sign me in successfully", function() {
     cy.get("/signin");
     cy.get("[data-test=email]").type("adam@gmail.com")
     cy.get("[data-test=password]").type("Super_Secure_Password_1{type}")
-  })
+  });
 });
