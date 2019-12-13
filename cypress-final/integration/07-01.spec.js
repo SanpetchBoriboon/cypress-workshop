@@ -1,7 +1,11 @@
 describe("/register", function() {
+  before(function() {
+    cy.task("npm run db:destroy && npm run db:migrate")
+  });
+
   beforeEach(function() {
     cy.visit("/register")
-  })
+  });
 
   it("should greet with `Sign Up`", function() {
     cy.get("h1").contains("Sign Up");

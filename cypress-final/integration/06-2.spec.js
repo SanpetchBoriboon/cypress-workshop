@@ -14,7 +14,7 @@ describe("/signin", function() {
   it("should sign me up successfully", function() {
     cy.fixture("05.fixture").then(function(user) {
       cy.get("[data-test=email]").type(user.email);
-      cy.get("[data-test=password]").type(user.password);
+      cy.get("[data-test=password]").type(user.password + "{enter}");
     });
   });
 });
