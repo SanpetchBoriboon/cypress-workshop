@@ -1,10 +1,10 @@
-describe("/register", function() {
+describe("07-1", function() {
   before(function() {
     cy.task("npm run db:destroy && npm run db:migrate")
   });
 
   beforeEach(function() {
-    cy.visit("/register");
+    cy.visit("http://18.139.84.211:4100/register");
   });
 
   it("should greet with `Sign Up`", function() {

@@ -1,6 +1,6 @@
-describe("/register", function() {
+describe("06-1", function() {
   beforeEach(function() {
-    cy.visit("/register")
+    cy.visit("http://18.139.84.211:4100/register");
   })
 
   it("should greet with `Sign Up`", function() {

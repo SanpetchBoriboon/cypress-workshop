@@ -1,15 +1,15 @@
-describe('/', function() {
+describe("12", function() {
   it("should create article correctly", function() {
     cy.server();
     cy.route("POST", "/api/users/login").as("loginRoute");
     cy.route("POST", "/api/articles").as("createArticleRoute");
 
-    cy.visit("/sigin");
+    cy.visit("http://18.139.84.211:4100/signin");
     cy.get("[data-test=email]").type(user.email);
     cy.get("[data-test=password]").type(user.password + "{enter}");
     cy.wait("@loginRoute");
 
-    cy.visit("/editor");
+    cy.visit("http://18.139.84.211:4100/editor");
 
     cy.get("[data-test=title]").type("Test title");
     cy.get("[data-test=description]").type("Test description");

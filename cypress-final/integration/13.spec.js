@@ -1,4 +1,4 @@
-describe('/:title-slug', function() {
+describe("13", function() {
   it("should be able to edit article", function() {
     cy.server();
 

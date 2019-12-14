@@ -1,4 +1,4 @@
-describe('/:title-slug', function() {
+describe("14", function() {
   beforeEach(function() {
     cy.server();
 

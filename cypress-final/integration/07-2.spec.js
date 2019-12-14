@@ -1,11 +1,10 @@
-describe("/signin", function() {
+describe("07-2", function() {
   before(function() {
-    cy.prepareAuth();
-    return;
+    cy.task("npm run db:destroy && npm run db:migrate")
   });
 
   beforeEach(function() {
-    cy.visit("/sigin");
+    cy.visit("http://18.139.84.211:4100/signin");
   });
 
   it("should greet with `Sign In`", function() {
@@ -17,7 +16,9 @@ describe("/signin", function() {
   });
 
   it("should sign me up successfully", function() {
-    cy.get("[data-test=email]").type(this.testUser.email);
-    cy.get("[data-test=password]").type(this.testUser.password + "{enter}");
+    cy.fixture("05.fixture").then(function(user) {
+      cy.get("[data-test=email]").type(user.email);
+      cy.get("[data-test=password]").type(user.password + "{enter}");
+    });
   });
 });
