@@ -1,10 +1,10 @@
 describe("07-2", function() {
   before(function() {
-    cy.task("npm run db:destroy && npm run db:migrate")
+    cy.exec("npm run db:destroy && npm run db:migrate")
   });
 
   beforeEach(function() {
-    cy.visit("http://18.139.84.211:4100/signin");
+    cy.visit("http://18.139.84.211:4100/login");
   });
 
   it("should greet with `Sign In`", function() {

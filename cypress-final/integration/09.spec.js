@@ -1,12 +1,11 @@
 describe("09", function() {
   before(function() {
-    cy.task("npm run db:destroy && npm run db:migrate")
-    cy.fixture("05.fixture").as("testUser")
-    return;
+    cy.exec("npm run db:destroy && npm run db:migrate")
   });
 
   beforeEach(function() {
     cy.visit("http://18.139.84.211:4100/register");
+    cy.fixture("05.fixture").as("testUser")
   });
 
   it("should greet with `Sign Up`", function() {

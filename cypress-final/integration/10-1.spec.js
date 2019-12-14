@@ -1,11 +1,10 @@
 describe("10-1", function() {
   before(function() {
-    cy.prepareAuth();
-    return;
+    cy.exec("npm run db:destroy && npm run db:migrate")
   });
 
   beforeEach(function() {
-    cy.visit("http://18.139.84.211:4100/register");
+    cy.prepareAuth();
   });
 
   it("should greet with `Sign Up`", function() {

@@ -1,6 +1,6 @@
 describe("07-1", function() {
   before(function() {
-    cy.task("npm run db:destroy && npm run db:migrate")
+    cy.exec("npm run db:destroy && npm run db:migrate")
   });
 
   beforeEach(function() {
