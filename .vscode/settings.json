@@ -1,0 +1,12 @@
+{
+  "window.zoomLevel": 2,
+  "workbench.colorTheme": "Ra Spring",
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "cypress.json"
+      ],
+      "url": "https://on.cypress.io/cypress.schema.json"
+    }
+  ]
+}
