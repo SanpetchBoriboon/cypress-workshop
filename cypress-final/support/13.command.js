@@ -2,10 +2,12 @@ Cypress.Commands.add("login", function() {
   cy.route("POST", "/api/users/login").as("loginRoute");
   cy.visit("http://18.139.84.211:4100/login");
 
-  cy.get("[data-test=email]").type(user.email);
-  cy.get("[data-test=password]").type(user.password + "{enter}");
+  cy.fixture("05.fixture").then(function(user) {
+    cy.get("[data-test=email]").type(user.email);
+    cy.get("[data-test=password]").type(user.password + "{enter}");
 
-  cy.wait("@loginRoute");
+    cy.wait("@loginRoute");
+  });
 });
 
 Cypress.Commands.add("createArticle", function() {

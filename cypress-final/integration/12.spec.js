@@ -1,12 +1,15 @@
 describe("12", function() {
+  beforeEach(function() {
+    cy.fixture("05.fixture").as("testUser")
+  })
   it("should create article correctly", function() {
     cy.server();
     cy.route("POST", "/api/users/login").as("loginRoute");
     cy.route("POST", "/api/articles").as("createArticleRoute");
 
-    cy.visit("http://18.139.84.211:4100/signin");
-    cy.get("[data-test=email]").type(user.email);
-    cy.get("[data-test=password]").type(user.password + "{enter}");
+    cy.visit("http://18.139.84.211:4100/login");
+    cy.get("[data-test=email]").type(this.testUser.email);
+    cy.get("[data-test=password]").type(this.testUser.password + "{enter}");
     cy.wait("@loginRoute");
 
     cy.visit("http://18.139.84.211:4100/editor");

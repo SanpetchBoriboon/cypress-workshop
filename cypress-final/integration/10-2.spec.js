@@ -4,7 +4,7 @@ describe("10-2", function() {
   });
 
   beforeEach(function() {
-    cy.prepareAuth();
+    cy.prepareAuth("login");
   });
 
   it("should greet with `Sign In`", function() {
