@@ -1,1 +1,6 @@
-{}
+{
+	"baseUrl": "http://18.139.84.211:4100",
+	"integrationFolder": "cypress/integration",
+	"fixturesFolder": "cypress/fixtures",
+	"reporter": "spec"
+}
